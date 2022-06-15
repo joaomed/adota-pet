@@ -19,8 +19,6 @@ export const ElementList = styled('li')`
     gap: ${({theme}) => theme.spacing(2)};
     margin-bottom: ${({theme}) => theme.spacing(10)};
   }
-
-
 `;
 
 export const Photo = styled('img')`
