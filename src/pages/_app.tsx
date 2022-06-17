@@ -11,6 +11,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   
   return (   
+    //Cabeçalho padrão apenas quando estiver na tela inicial
+    // Caso estiver na home, retorna cabeçalho simples. Senão, cabeçalho Admin.
     <ThemeProvider theme={tema}>
       {router.pathname === '/' ? <Header/> : <HeaderAdmin/>}     
             
