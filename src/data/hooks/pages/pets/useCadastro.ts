@@ -23,7 +23,7 @@ export function useCadastro(){
         clearForm();
         setMessage('Pet cadastrado com sucesso!')
       })
-      //caso dê erro, usamos o catch
+      //caso dê erro, usamos o catch para mostrar qual mensagem o back-end nos mandou
       .catch((error:AxiosError)=>{
         setMessage(error.response?.data.message)
       })

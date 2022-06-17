@@ -82,7 +82,7 @@ const Cadastro: NextPage = () => {
         open={message.length > 0}
         autoHideDuration={2500}
         onClose={()=> setMessage('')}
-        message={'Pet cadastrado'}
+        message={message}
       />
     </>
   )

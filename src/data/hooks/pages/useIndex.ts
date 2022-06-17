@@ -22,25 +22,26 @@ export function useIndex(){
   function adopt(){
     if(selectedPet!==null){
       if(validateAdoptionData()){
+        //registra no back-end a adocao
         ApiService.post('/adocoes',{
           pet_id: selectedPet.id,
           email: email,
           valor: value
       })
+      //quando receber a resposta do back-end, limpa o formulário e mostra uma mensagem de sucesso
           .then(()=>{
             setSelectedPet(null);
             setMessage('Pet adotado com sucesso!')
             clearForm()
           })
+      //caso dê erro, usamos o catch
           .catch((error: AxiosError)=>{
             setMessage(error.response?.data.message)
           })
       } else {
         setMessage('Preencha todos os campos corretamente')
-      }    
-
+      }  
     }
-
   }
 
   //usar biblioteca para validação mais elaborada
